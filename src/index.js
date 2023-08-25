@@ -1,6 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
+import "slim-select/dist/slimselect.css";
 
 const breedSelect = document.querySelector(".breed-select");
 const catInfoDiv = document.querySelector(".cat-info");
@@ -37,7 +38,16 @@ fetchBreeds()
       option.textContent = breed.name;
       breedSelect.appendChild(option);
     });
-  })
+    
+
+new SlimSelect({
+  select: document.querySelector('.breed-select')
+
+  
+})
+    
+})
+
   .catch(error => {
     console.error("Error loading breeds:", error);
     showError(error);
@@ -58,8 +68,8 @@ fetchCatByBreed(selectedBreedId)
     if (catData) {
       catInfoDiv.innerHTML = `
         <img src="${catData.url}" alt="Cat Image" class="cat-image">
-        <p class="breed-info"><strong>Breed:</strong> ${catData.breeds[0].name}</p>
-        <p class="description-info"><strong>Description:</strong> ${catData.breeds[0].description}</p>
+        <p class="breed-info"> ${catData.breeds[0].name}</p>
+        <p class="description-info"> ${catData.breeds[0].description}</p>
         <p class="temperament-info"><strong>Temperament:</strong> ${catData.breeds[0].temperament}</p>
       `;
     } else {
