@@ -16,8 +16,8 @@ function showLoader() {
 
 function hideLoader() {
   loader.style.display = "none";
-
 }
+
 
 function showError() {
   Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
@@ -85,3 +85,5 @@ fetchCatByBreed(selectedBreedId)
       hideLoader();
     });
 });
+hideLoader();
+loadBreedSelect();

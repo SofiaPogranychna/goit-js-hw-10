@@ -87,3 +87,6 @@ width: 500px;
             }
         
         }
+.breed-select {
+    display: none;
+}
