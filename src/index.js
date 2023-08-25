@@ -27,7 +27,7 @@ function hideError() {
   errorElement.style.display = "none";
 }
 
-hideLoader();
+showLoader();
 hideError();
 
 fetchBreeds()
@@ -85,5 +85,3 @@ fetchCatByBreed(selectedBreedId)
       hideLoader();
     });
 });
-hideLoader();
-loadBreedSelect();
